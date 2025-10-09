@@ -1,0 +1,10 @@
+venv/
+
+maildir/
+emails.csv
+*.tar.gz
+
+nohup.out
+
+__pycache__/
+*.pyc

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CerebroGuard - Phishing Analysis</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CerebroGuard 🧠</h1>
+            <p>Context-Aware Phishing Shield</p>
+        </header>
+        <main>
+            <form id="email-form">
+                <div class="form-group">
+                    <label for="sender">Sender Email</label>
+                    <input type="email" id="sender" placeholder="ceo@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="recipient">Recipient Email</label>
+                    <input type="email" id="recipient" placeholder="analyst@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="body">Email Body</label>
+                    <textarea id="body" rows="10" placeholder="Enter the full email body here..." required></textarea>
+                </div>
+                <button type="submit" id="analyze-btn">Analyze Email</button>
+            </form>
+            <div id="results-container" class="hidden">
+                <h2>Analysis Results</h2>
+                <div id="results"></div>
+            </div>
+        </main>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
