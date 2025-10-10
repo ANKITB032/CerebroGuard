@@ -1,7 +1,7 @@
 import pickle
 import networkx as nx
 import spacy
-from flask import Flask, request, jsonify, render_template # MODIFIED LINE
+from flask import Flask, request, jsonify, render_template
 
 # --- Configuration ---
 graph_file = 'enron_graph.gpickle'
@@ -21,7 +21,7 @@ print("NLP model loaded successfully.")
 app = Flask(__name__)
 
 
-# NEW ROUTE TO SERVE THE HTML PAGE
+# Route to serve the HTML page
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -66,7 +66,8 @@ def analyze_email(sender, recipient, body):
     risky_keywords = {
         "financial": ["invoice", "payment", "bank", "account", "transfer", "wire"],
         "urgency": ["urgent", "asap", "immediate", "now", "action required"],
-        "credential": ["password", "username", "login", "verify", "authenticate"]
+        "credential": ["password", "username", "login", "verify", "authenticate"],
+        "threat_demand": ["hacker", "hacked", "gimme", "pay up", "ransom", "20k", "50k", "10k"] # Enhanced category
     }
     
     doc = nlp(body.lower())
@@ -94,6 +95,12 @@ def analyze_email(sender, recipient, body):
             "finding": "Credential Request Detected",
             "details": "Email contains keywords related to login credentials.",
             "risk_contribution": 30
+        })
+    if "threat_demand" in found_keywords:
+        evidence_factors.append({
+            "finding": "Threat or Demand Detected",
+            "details": "Email contains unprofessional language indicative of a direct threat or demand.",
+            "risk_contribution": 70 # High risk score for direct threats
         })
 
     # Calculate final risk score
@@ -124,7 +131,6 @@ def analyze():
     return jsonify(result)
 
 
-# --- Main execution ---
+# --- Main execution (for local testing) ---
 if __name__ == '__main__':
-    # This will run the app on a local development server
     app.run(debug=True)
