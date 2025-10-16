@@ -1,115 +1,103 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
 body {
-  font-family: 'Inter', sans-serif;
-  background-color: #121212;
-  color: #e0e0e0;
-  margin: 0;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .container {
-  width: 100%;
-  max-width: 700px;
-  background-color: #1e1e1e;
-  border-radius: 8px;
-  padding: 30px;
-  border: 1px solid #333;
+    width: 100%;
+    max-width: 700px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 30px;
+    border: 1px solid #333;
 }
 
 header {
-  text-align: center;
-  margin-bottom: 30px;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 header h1 {
-  color: #bb86fc;
-  margin: 0;
+    color: #bb86fc;
+    margin: 0;
 }
 
 header p {
-  color: #888;
-  margin-top: 5px;
+    color: #888;
+    margin-top: 5px;
 }
 
 .form-group {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 500;
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
 }
 
 input, textarea {
-  width: 100%;
-  padding: 12px;
-  background-color: #333;
-  border: 1px solid #444;
-  border-radius: 4px;
-  color: #e0e0e0;
-  font-size: 16px;
-  box-sizing: border-box;
+    width: 100%;
+    padding: 12px;
+    background-color: #333;
+    border: 1px solid #444;
+    border-radius: 4px;
+    color: #e0e0e0;
+    font-size: 16px;
+    box-sizing: border-box; /* Important */
 }
 
 textarea {
-  resize: vertical;
+    resize: vertical;
 }
 
 button {
-  width: 100%;
-  padding: 15px;
-  background-color: #bb86fc;
-  color: #121212;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background-color 0.2s;
+    width: 100%;
+    padding: 15px;
+    background-color: #bb86fc;
+    color: #121212;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
 }
 
 button:hover {
-  background-color: #a067e8;
+    background-color: #a067e8;
 }
-
-#loading-spinner {
-  border: 3px solid #333;
-  border-top: 3px solid #bb86fc;
-  border-radius: 50%;
-  width: 22px; height: 22px;
-  animation: spin 0.7s linear infinite;
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 10px;
-}
-@keyframes spin { 100% { transform: rotate(360deg);} }
-.hidden { display: none; }
-
-input.valid, textarea.valid { border-color: #03dac6; }
-input.invalid, textarea.invalid { border-color: #cf6679; }
 
 #results-container {
-  margin-top: 30px;
-  padding-top: 20px;
-  border-top: 1px solid #333;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+}
+
+.hidden {
+    display: none;
 }
 
 #results h3 {
-  text-align: center;
-  margin-top: 0;
+    text-align: center;
+    margin-top: 0;
 }
 
 .score {
-  font-size: 48px;
-  font-weight: 700;
-  text-align: center;
-  margin: 10px 0;
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+    margin: 10px 0;
 }
 
 .score-low { color: #03dac6; }
@@ -117,36 +105,27 @@ input.invalid, textarea.invalid { border-color: #cf6679; }
 .score-high { color: #cf6679; }
 
 #results ul {
-  list-style-type: none;
-  padding: 0;
+    list-style-type: none;
+    padding: 0;
 }
 
 #results li {
-  background-color: #2a2a2a;
-  padding: 15px;
-  margin-bottom: 10px;
-  border-radius: 4px;
-  border-left: 4px solid;
+    background-color: #2a2a2a;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border-left: 4px solid;
 }
 
 .factor-positive { border-left-color: #03dac6; }
 .factor-negative { border-left-color: #cf6679; }
 
 .factor-finding {
-  font-weight: 700;
-  margin-bottom: 5px;
+    font-weight: 700;
+    margin-bottom: 5px;
 }
 
 .factor-details {
-  font-size: 14px;
-  color: #aaa;
-}
-
-/* Animated fade-in for results */
-@keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(40px);}
-  100% { opacity: 1; transform: translateY(0);}
-}
-.results-animated {
-  animation: fadeInUp 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+    font-size: 14px;
+    color: #aaa;
 }
